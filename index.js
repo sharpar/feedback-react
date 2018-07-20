@@ -8,5 +8,7 @@ const app = express();
 app.get('/', (req, res) => {
   res.send({ hi: 'there' });
 });
-            //thiskeyboardiswierd
-app.listen(5000);
+
+// check if the underlying environment (eg:heroku) has declared a port for us to use
+const PORT = process.env.PORT || 5000;
+app.listen(PORT);
